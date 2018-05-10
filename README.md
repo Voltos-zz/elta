@@ -22,7 +22,7 @@ If the table elements have their own style classes, the script will copy them
 <a name="СodeSample"></a>
 ### Сode sample
 ```html
-<table class="elta elta-def table-class">
+<table class="elta elta-def table table-striped">
     <tr>
         <th>name</th>
         <th>lastname</th>
@@ -30,7 +30,7 @@ If the table elements have their own style classes, the script will copy them
         <th>sex</th>
         <th>age</th>
     </tr>
-    <tr>
+    <tr class="marker">
         <td>TestName</td>
         <td>TestLastname</td>
         <td class='email'>TestEmail@*****.com</td>
@@ -41,15 +41,15 @@ If the table elements have their own style classes, the script will copy them
 ```
 This variant of the table will be converted to the code below
 ```html
-<div class="elta-table elta-def table-class">
-    <div class="elta-table-row">
-        <div class="elta-table-row-col title">name</div>
-        <div class="elta-table-row-col title">lastname</div>
-        <div class="elta-table-row-col title">email</div>
-        <div class="elta-table-row-col title">sex</div>
-        <div class="elta-table-row-col title">age</div>
+<div class="elta-table elta-def table table-striped">
+    <div class="elta-table-row-title">
+        <div class="elta-table-row-col">name</div>
+        <div class="elta-table-row-col">lastname</div>
+        <div class="elta-table-row-col">email</div>
+        <div class="elta-table-row-col">sex</div>
+        <div class="elta-table-row-col">age</div>
     </div>
-    <div class="elta-table-row tbody">
+    <div class="elta-table-row marker">
         <div class="elta-table-row-col">TestName</div>
         <div class="elta-table-row-col">TestLastname</div>
         <div class="elta-table-row-col email">TestEmail@*****.com</div>

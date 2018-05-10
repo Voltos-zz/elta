@@ -1,5 +1,5 @@
 .elta-hide{
-    position: absolute;
+    position: relative;
     top: -9999px;
     left: -9999px;
 }
@@ -7,7 +7,8 @@
     border-top: 1px solid #aaa;
     border-left: 1px solid #aaa;
 }
-.elta-table-row{
+.elta-table-row,
+.elta-table-row-title{
     display: flex;
     justify-content: space-between;
 }
@@ -16,12 +17,14 @@
     border-right: 1px solid #aaa;
     padding: 5px 10px 5px 5px;
 }
-.elta-def .elta-table-row-col.title{
+.elta-def .elta-table-row-title .elta-table-row-col{
     font-weight: 600;
 }
-.elta-def .elta-table-row:nth-of-type(odd){
+.elta-def .elta-table-row:nth-of-type(odd),
+.elta-def .elta-table-row-title:nth-of-type(odd){
     background-color: #f0f0f0;
 }
-.elta-def .elta-table-row:hover{
+.elta-def .elta-table-row:hover,
+.elta-def .elta-table-row-title:hover{
     background-color: #ddd;
 }

@@ -38,11 +38,17 @@ function reresizeElta(table){
 }
 
 function getColumnWidth(table){
+    var resArray = [];
     var columnWidth = [];
-    $(table).find('tr:last td').each(function(){
-        columnWidth.push($(this).outerWidth());
-    })
-    return columnWidth;
+    $(table).find('tr').each(function(){
+        $(this).find('td').each(function(){
+            columnWidth.push($(this).outerWidth());
+        });
+        if(columnWidth.length > resArray.length ){
+            resArray = columnWidth
+        }
+    });
+    return resArray;
 }
 
 function getTableTitles(table){

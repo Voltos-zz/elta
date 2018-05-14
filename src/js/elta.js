@@ -61,27 +61,26 @@ function getTableTitles(table){
 }
 
 function createElta(table){
-    var first = 1;
     var tableTitles = getTableTitles(table);
     var columnWidth = getColumnWidth(table);
     var tableCss = table.attr('class').replace('elta', '');
     var elasticTable = '<div class="elta-table'+tableCss+'" ';
     elasticTable+= 'style="margin-top:-'+table.outerHeight()+'px">';
     var tableRow = $(table).find('tr');
-    tableRow.each(function(){
+    tableRow.each(function(key){
         var rowClass = $(this).attr('class') ? ' '+$(this).attr('class') : '';
-        if(tableTitles.length > 0 && first){
+        if(tableTitles.length > 0 && key == 0){
             elasticTable+= '<div class="elta-table-row-title'+rowClass+'">';
             var tableCol = $(this).find('th');
-            first = 0;
         }else{
             elasticTable+= '<div class="elta-table-row'+rowClass+'">';
             var tableCol = $(this).find('td');
         }
         tableCol.each(function(key, val){
             var colClass = $(this).attr('class') ? ' '+$(this).attr('class') : '';
+            var colspan = $(this).attr('colspan') ? $(this).attr('colspan') : 1 ;
             elasticTable+= '<div class="elta-table-row-col'+colClass+'" ';
-            elasticTable+= 'style="flex-basis:'+columnWidth[key]+'px;">';
+            elasticTable+= 'data-colspan="'+colspan+'">';
             elasticTable+= $.trim($(this).html());
             elasticTable+= '</div>';
         });

@@ -29,9 +29,16 @@ function reresizeElta(table){
         $('.elta-table-row, .elta-table-row-title').css('flex-wrap','nowrap');
     }
     $('.elta-table-row, .elta-table-row-title').each(function(){
+        var colNumber = 0;
         $(this).find('.elta-table-row-col').each(function(key){
-            var width = columnWidth[key]+"px";
-            var grow = columnWidthSum / columnWidth[key];
+            var width = 0;
+            var grow = 0;
+            for(var i = 0; i < $(this).attr('data-colspan'); i++){
+                width+= columnWidth[colNumber];
+                grow+= columnWidthSum / columnWidth[colNumber];
+                colNumber++;
+            }
+            width+= "px";
             $(this).css({'flex-grow':grow,'flex-basis':width});
         });
     });

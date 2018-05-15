@@ -70,23 +70,27 @@ function getTableTitles(table){
 function createElta(table){
     var tableTitles = getTableTitles(table);
     var columnWidth = getColumnWidth(table);
-    var tableCss = table.attr('class').replace('elta', '');
-    var elasticTable = '<div class="elta-table'+tableCss+'" ';
+    var tableClasses = table.attr('class').replace('elta', '');
+    var elasticTable = '<div class="elta-table'+tableClasses+'" ';
     elasticTable+= 'style="margin-top:-'+table.outerHeight()+'px">';
     var tableRow = $(table).find('tr');
     tableRow.each(function(key){
         var rowClass = $(this).attr('class') ? ' '+$(this).attr('class') : '';
         if(tableTitles.length > 0 && key == 0){
-            elasticTable+= '<div class="elta-table-row-title'+rowClass+'">';
-            var tableCol = $(this).find('th');
+            elasticTable+= '<div class="elta-table-row-title elta-tr'+rowClass+'">';
         }else{
-            elasticTable+= '<div class="elta-table-row'+rowClass+'">';
-            var tableCol = $(this).find('td');
+            elasticTable+= '<div class="elta-table-row elta-tr'+rowClass+'">';
         }
+        var tableCol = $(this).find('th, td');
         tableCol.each(function(key, val){
             var colClass = $(this).attr('class') ? ' '+$(this).attr('class') : '';
             var colspan = $(this).attr('colspan') ? $(this).attr('colspan') : 1 ;
-            elasticTable+= '<div class="elta-table-row-col'+colClass+'" ';
+            if($(this).is('th')){
+                elasticTable+= '<div class="elta-table-row-col elta-tr-th'+colClass+'" ';
+            }else{
+                elasticTable+= '<div class="elta-table-row-col elta-tr-td'+colClass+'" ';
+            }
+            
             elasticTable+= 'data-colspan="'+colspan+'">';
             elasticTable+= $.trim($(this).html());
             elasticTable+= '</div>';

@@ -69,7 +69,6 @@ function getTableTitles(table){
 
 function createElta(table){
     var tableTitles = getTableTitles(table);
-    var columnWidth = getColumnWidth(table);
     var tableClasses = table.attr('class').replace('elta', '');
     var elasticTable = '<div class="elta-table'+tableClasses+'" ';
     elasticTable+= 'style="margin-top:-'+table.outerHeight()+'px">';

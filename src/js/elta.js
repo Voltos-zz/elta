@@ -11,9 +11,9 @@ $(window).resize(function() {
 });
 
 function recreateTable(){
-    $('.elta').each(function(){
+    $('.elta').each(function(key){
         if($(this).is('table')){
-            $(this).after(createElta($(this)));
+            $(this).after(createElta($(this), key));
             reresizeElta($(this));
             $(this).addClass('elta-hide');
         }
@@ -22,15 +22,17 @@ function recreateTable(){
 
 function reresizeElta(table){
     var columnWidth = getColumnWidth(table);
+    var eltaNum = table.attr('data-tablenum');
     var columnWidthSum = parseInt(eval(columnWidth.join("+")));
-    if(columnWidthSum > $('.elta-table').outerWidth()) {
-        $('.elta-table-row, .elta-table-row-title').css('flex-wrap','wrap');
+    var eltaTable = '[data-eltaNum='+eltaNum+']';
+    if(columnWidthSum > $('[data-eltaNum='+eltaNum+']').outerWidth()) {
+        $(eltaTable+' .elta-tr').css('flex-wrap','wrap');
     }else{
-        $('.elta-table-row, .elta-table-row-title').css('flex-wrap','nowrap');
+        $(eltaTable+' .elta-tr').css('flex-wrap','nowrap');
     }
-    $('.elta-table-row, .elta-table-row-title').each(function(){
+    $(eltaTable+' .elta-tr').each(function(){
         var colNumber = 0;
-        $(this).find('.elta-table-row-col').each(function(key){
+        $(this).find('.elta-tr-td, .elta-tr-th').each(function(key){
             var width = 0;
             var grow = 0;
             for(var i = 0; i < $(this).attr('data-colspan'); i++){
@@ -38,8 +40,8 @@ function reresizeElta(table){
                 grow+= columnWidthSum / columnWidth[colNumber];
                 colNumber++;
             }
-            width+= "px";
-            $(this).css({'flex-grow':grow,'flex-basis':width});
+            width+= 'px';
+            $(this).css({'flex-grow':grow,'width':width});
         });
     });
 }
@@ -67,10 +69,12 @@ function getTableTitles(table){
     return tableTitles;
 }
 
-function createElta(table){
+function createElta(table, tableNum){
     var tableTitles = getTableTitles(table);
+    table.attr('data-tableNum', tableNum);
     var tableClasses = table.attr('class').replace('elta', '');
     var elasticTable = '<div class="elta-table'+tableClasses+'" ';
+    elasticTable+= 'data-eltaNum="'+tableNum+'" ';
     elasticTable+= 'style="margin-top:-'+table.outerHeight()+'px">';
     var tableRow = $(table).find('tr');
     tableRow.each(function(key){
@@ -89,7 +93,6 @@ function createElta(table){
             }else{
                 elasticTable+= '<div class="elta-table-row-col elta-tr-td'+colClass+'" ';
             }
-            
             elasticTable+= 'data-colspan="'+colspan+'">';
             elasticTable+= $.trim($(this).html());
             elasticTable+= '</div>';
@@ -97,5 +100,5 @@ function createElta(table){
         elasticTable+= '</div>';
     });
     elasticTable+= '</div>';
-    return elasticTable
+    return elasticTable;
 }

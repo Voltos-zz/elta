@@ -25,7 +25,7 @@ function reresizeElta(table){
     var eltaNum = table.attr('data-tablenum');
     var columnWidthSum = parseInt(eval(columnWidth.join("+")));
     var eltaTable = '[data-eltaNum='+eltaNum+']';
-    if(columnWidthSum > $('[data-eltaNum='+eltaNum+']').outerWidth()) {
+    if(columnWidthSum > $(eltaTable).outerWidth()) {
         $(eltaTable+' .elta-tr').css('flex-wrap','wrap');
     }else{
         $(eltaTable+' .elta-tr').css('flex-wrap','nowrap');
@@ -48,13 +48,13 @@ function reresizeElta(table){
 
 function getColumnWidth(table){
     var resArray = [];
-    var columnWidth = [];
     $(table).find('tr').each(function(){
+        var columnWidth = [];
         $(this).find('td').each(function(){
             columnWidth.push($(this).outerWidth());
         });
         if(columnWidth.length > resArray.length ){
-            resArray = columnWidth
+            resArray = columnWidth;
         }
     });
     return resArray;

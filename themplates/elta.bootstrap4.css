@@ -1,0 +1,113 @@
+.elta-bootstrap4.table{
+    box-sizing: border-box;
+    border-top: 1px solid #dee2e6;
+}
+.elta-bootstrap4.table .elta-table-row-title{
+    border-bottom: 1px solid #dee2e6;
+}
+.elta-bootstrap4.table .elta-table-row{
+    border-top: 1px solid #dee2e6;
+}
+.elta-bootstrap4.table-borderless,
+.elta-bootstrap4.table-borderless .elta-table-row,
+.elta-bootstrap4.table-borderless .elta-table-row-title,
+.elta-bootstrap4.table-borderless.table-dark,
+.elta-bootstrap4.table-borderless.table-dark .elta-table-row,
+.elta-bootstrap4.table-borderless.table-dark .elta-table-row-title{
+    border-top: 0px;
+    border-bottom: 0px;
+}
+.elta-bootstrap4.table-dark{
+    border-top: 1px solid #32383e;
+    color: #fff;
+    background-color: #212529;
+}
+.elta-bootstrap4.table-dark .elta-table-row{
+    border-top: 1px solid #32383e;
+}
+.elta-bootstrap4.table-dark .elta-table-row-title{
+    border-bottom: 1px solid #32383e;
+}
+.elta-bootstrap4.table-bordered{
+    border-bottom: 0;
+    border-right: 0;
+}
+.elta-bootstrap4.table-bordered .elta-table-row{
+    border-top: 0;
+}
+.elta-bootstrap4.table .elta-table-row-col{
+    padding: .75rem;
+    vertical-align: top;
+}
+.elta-bootstrap4.table .elta-table-row-title .elta-table-row-col{
+    font-weight: bold;
+    vertical-align: bottom;
+}
+.elta-bootstrap4.table-striped .elta-table-row:nth-of-type(odd){
+    background-color: rgba(0,0,0,.05);
+}
+.elta-bootstrap4.table-dark.table-striped .elta-table-row:nth-of-type(odd){
+    background-color: rgba(255,255,255,.05);
+}
+.elta-bootstrap4.table-bordered{
+    border-top: 1px solid #dee2e6;
+    border-left: 1px solid #dee2e6;
+}
+.elta-bootstrap4.table-bordered .elta-table-row-col{
+    border-bottom: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+}
+.elta-bootstrap4.table-dark.table-bordered{
+    border-top: 1px solid #32383e;
+    border-left: 1px solid #32383e;
+}
+.elta-bootstrap4.table-dark.table-bordered .elta-table-row-col{
+    border-bottom: 1px solid #32383e;
+    border-right: 1px solid #32383e;
+}
+.elta-bootstrap4.table-hover .elta-table-row:hover{
+    background-color: rgba(0,0,0,.075);
+}
+.elta-bootstrap4.table-dark.table-hover .elta-table-row:hover{
+    background-color: rgba(255,255,255,.075);
+}
+.elta-bootstrap4.table-sm .elta-table-row-col{
+    padding: .3rem;
+}
+.elta-bootstrap4.table .elta-table-row.table-active,
+.elta-bootstrap4.table .elta-table-row-col.table-active{
+    background-color: rgba(0,0,0,.075);
+}
+.elta-bootstrap4.table .elta-table-row.table-primary,
+.elta-bootstrap4.table .elta-table-row-col.table-primary{
+    background-color: #b8daff;
+}
+.elta-bootstrap4.table .elta-table-row.table-secondary,
+.elta-bootstrap4.table .elta-table-row-col.table-secondary{
+    background-color: #d6d8db;
+}
+.elta-bootstrap4.table .elta-table-row.table-success,
+.elta-bootstrap4.table .elta-table-row-col.table-success{
+    background-color: #c3e6cb;
+}
+.elta-bootstrap4.table .elta-table-row.table-danger,
+.elta-bootstrap4.table .elta-table-row-col.table-danger{
+    background-color: #f5c6cb;
+}
+.elta-bootstrap4.table .elta-table-row.table-warning,
+.elta-bootstrap4.table .elta-table-row-col.table-warning{
+    background-color: #ffeeba;
+}
+.elta-bootstrap4.table .elta-table-row.table-info,
+.elta-bootstrap4.table .elta-table-row-col.table-info{
+    background-color: #bee5eb;
+}
+.elta-bootstrap4.table .elta-table-row.table-light,
+.elta-bootstrap4.table .elta-table-row-col.table-light{
+    background-color: #fdfdfe;
+}
+.elta-bootstrap4.table .elta-table-row.table-dark,
+.elta-bootstrap4.table .elta-table-row-col.table-dark{
+    color: #fff;
+    background-color: #212529;
+}

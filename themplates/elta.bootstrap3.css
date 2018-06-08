@@ -1,0 +1,62 @@
+.elta-bootstrap3.table{
+    box-sizing: border-box;
+}
+.elta-bootstrap3.table .elta-table-row-title{
+    border-bottom: 2px solid #ddd;
+}
+.elta-bootstrap3.table .elta-table-row{
+    border-top: 1px solid #ddd;
+}
+.elta-bootstrap3.table-bordered{
+    border-bottom: 0;
+    border-right: 0;
+}
+.elta-bootstrap3.table-bordered .elta-table-row{
+    border-top: 0;
+}
+.elta-bootstrap3.table .elta-table-row-col{
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+}
+.elta-bootstrap3.table .elta-table-row-title .elta-table-row-col{
+    font-weight: bold;
+    vertical-align: bottom;
+}
+.elta-bootstrap3.table .elta-table-row:nth-of-type(odd){
+    background-color: #f9f9f9;
+}
+.elta-bootstrap3.table-bordered{
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+.elta-bootstrap3.table-bordered .elta-table-row-col{
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+.elta-bootstrap3.table-hover .elta-table-row:hover{
+    background-color: #f5f5f5;
+}
+.elta-bootstrap3.table-condensed .elta-table-row-col{
+    padding: 5px;
+}
+.elta-bootstrap3.table .elta-table-row.active,
+.elta-bootstrap3.table .elta-table-row-col.active{
+    background-color: #f5f5f5;
+}
+.elta-bootstrap3.table .elta-table-row.success,
+.elta-bootstrap3.table .elta-table-row-col.success{
+    background-color: #dff0d8;
+}
+.elta-bootstrap3.table .elta-table-row.warning,
+.elta-bootstrap3.table .elta-table-row-col.warning{
+    background-color: #fcf8e3;
+}
+.elta-bootstrap3.table .elta-table-row.danger,
+.elta-bootstrap3.table .elta-table-row-col.danger{
+    background-color: #f2dede;
+}
+.elta-bootstrap3.table .elta-table-row.info,
+.elta-bootstrap3.table .elta-table-row-col.info{
+    background-color: #d9edf7;
+}
